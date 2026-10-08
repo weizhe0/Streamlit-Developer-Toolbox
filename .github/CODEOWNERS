@@ -1,1 +1,3 @@
-* @streamlit/community-cloud
+# Optional: request reviews from your repository owner.
+# Replace YOUR_GITHUB_USERNAME and remove the leading # to enable:
+# * @weizhe0

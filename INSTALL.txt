@@ -1,0 +1,36 @@
+DESIGN UPDATE — keeps your existing functions and Groq settings
+
+1. Copy theme.py into your blank-app folder, beside streamlit_app.py.
+2. In streamlit_app.py, add this import near the other imports:
+
+from theme import apply_theme
+
+3. Immediately AFTER your existing st.set_page_config(...) call, add:
+
+apply_theme()
+
+Do not add a second st.set_page_config call. Keep the existing one.
+
+4. To match the light theme, open .streamlit/config.toml. Update its
+existing [theme] section to the following (keep the [server] section):
+
+[theme]
+base = "light"
+primaryColor = "#6366F1"
+backgroundColor = "#F5F7FC"
+secondaryBackgroundColor = "#EEF2FF"
+textColor = "#17233D"
+
+Do not change secrets.toml, core.py, or requirements.txt.
+
+5. Save, stop with Ctrl+C, and restart:
+
+python -m streamlit run streamlit_app.py
+
+Appearance: pale blue/purple gradient background, dark navy sidebar,
+rounded panels, hero banner, clearer spacing and buttons.
+No new packages, image downloads, or network calls are needed.
+
+The reference screenshot could not be read, so this is an original theme,
+not an exact reproduction. Streamlit CSS selectors can change between
+versions; test after upgrading Streamlit. Remove apply_theme() to undo.
